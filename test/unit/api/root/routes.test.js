@@ -30,6 +30,15 @@ const AdminRoutes = require('../../../../src/api/routes')
 const Sinon = require('sinon')
 const Enums = require('../../../../src/lib/enumCached')
 
+Test.only('test root routes - api', async function (assert) {
+  const req = Base.buildRequest({ url: '/swagger.json', method: 'GET' })
+  const server = await Base.setup(AdminRoutes)
+  const res = await server.inject(req)
+  assert.ok(res)
+  await server.stop()
+  assert.end()
+})
+
 Test('test root routes - health', async function (assert) {
   const req = Base.buildRequest({ url: '/health', method: 'GET' })
   const server = await Base.setup(AdminRoutes)
