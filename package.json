@@ -47,6 +47,7 @@
     "test": "npm run test:unit | faucet",
     "standard": "standard",
     "test:unit": "tape 'test/unit/**/*.test.js'",
+    "test:swagger": "tape 'test/unit/api/root/routes.test.js'",
     "test:int": "tape 'test/integration/**/*.test.js'",
     "test:all": "run-s test test:integration test:functional test:spec",
     "test:xunit": "tape 'test/unit/**/*.test.js' | tap-xunit",
